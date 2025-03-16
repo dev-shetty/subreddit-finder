@@ -34,7 +34,6 @@ export const metadata: Metadata = {
   },
   authors: [{ name: "Deveesh Shetty" }],
   creator: "Deveesh Shetty",
-  themeColor: "#000000",
 }
 
 export default function RootLayout({

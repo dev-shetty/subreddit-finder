@@ -15,7 +15,7 @@ export async function POST(req: Request) {
 
     const prompt = {
       instructions:
-        "Based on the following problem or question, recommend 4-6 most relevant subreddits where the user should post. Give it as raw JSON, dont put it in a code block or anything else.",
+        "Based on the following problem or question, recommend 4-6 most relevant subreddits where the user should post. Give it as raw JSON, dont put it in a code block or anything else. Avoid any NSFW subreddits.",
       input: {
         problem: problem,
       },
@@ -38,7 +38,7 @@ export async function POST(req: Request) {
     }
 
     const { text } = await generateText({
-      model: google("gemini-1.5-pro"),
+      model: google("gemini-1.5-flash"),
       prompt: JSON.stringify(prompt),
       temperature: 0.7,
       maxTokens: 1000,
