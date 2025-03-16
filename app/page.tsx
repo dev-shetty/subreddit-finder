@@ -6,7 +6,14 @@ import { useState } from "react"
 import { Loader2, Search } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { Textarea } from "@/components/ui/textarea"
 import { SubredditResult } from "./subreddit-result"
 
@@ -50,16 +57,21 @@ export default function Home() {
   return (
     <main className="container max-w-4xl py-10 px-4 md:px-6">
       <div className="flex flex-col items-center text-center mb-10">
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">Find the Perfect Subreddit</h1>
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">
+          Find the Perfect Subreddit
+        </h1>
         <p className="text-muted-foreground max-w-[700px]">
-          Describe your problem or question, and our AI will recommend the most relevant subreddits for you to post in.
+          Describe your problem or question, and our AI will recommend the most
+          relevant subreddits for you to post in.
         </p>
       </div>
 
       <Card className="mb-8">
         <CardHeader>
-          <CardTitle>What's your question or problem?</CardTitle>
-          <CardDescription>Be specific to get the most relevant recommendations.</CardDescription>
+          <CardTitle>What&apos;s your question or problem?</CardTitle>
+          <CardDescription>
+            Be specific to get the most relevant recommendations.
+          </CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
           <CardContent>
@@ -71,7 +83,11 @@ export default function Home() {
             />
           </CardContent>
           <CardFooter>
-            <Button type="submit" className="w-full" disabled={isLoading || !problem.trim()}>
+            <Button
+              type="submit"
+              className="w-full"
+              disabled={isLoading || !problem.trim()}
+            >
               {isLoading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -90,7 +106,9 @@ export default function Home() {
 
       {results && results.length > 0 && (
         <div className="space-y-6">
-          <h2 className="text-2xl font-bold text-center">Recommended Subreddits</h2>
+          <h2 className="text-2xl font-bold text-center">
+            Recommended Subreddits
+          </h2>
           <div className="grid gap-4 md:grid-cols-2">
             {results.map((subreddit) => (
               <SubredditResult
@@ -107,4 +125,3 @@ export default function Home() {
     </main>
   )
 }
-
